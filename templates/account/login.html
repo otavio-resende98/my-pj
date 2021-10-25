@@ -1,0 +1,39 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block title %}Login{% endblock title %}
+
+{% block inner %}
+
+
+    <div class="container my-4 text-center">
+        <div class="row">
+            <div class="col-12 col-lg-7 col-xl-5 mx-auto mt-3 ">
+                <!-- Material form login -->
+                <div class="card mt-3">
+                    <div class="card-header info-color white-text text-center py-4">
+                        <img src="{% static 'images/ju_circle.png' %}" alt="" width="200">
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-5">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email:</label>
+                                {{ form.login | add_class:"form-control" | attr:"id:formEmail" | attr:"placeholder: "}}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Senha:</label>
+                                {{ form.password | add_class:"form-control" | attr:"id:formPassword" | attr:"placeholder: "}}
+                            </div>
+                            <input class="btn btn-raised btn-primary btn-block my-4 waves-effect z-depth-0" type="submit" name="entrar" value="Login">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

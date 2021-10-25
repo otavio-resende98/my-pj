@@ -1,0 +1,30 @@
+body {
+  background-color: #5382e8;
+}
+
+* {
+  font-family:Consolas
+}
+
+.navbar{
+    background-color: #06013c!important;
+}
+
+.tabelaEditavel {
+  border:solid 1px;
+  width:100%
+}
+
+.tabelaEditavel td {
+  border:solid 1px;
+}
+
+.tabelaEditavel .celulaEmEdicao {
+  padding: 0;
+}
+
+.tabelaEditavel .celulaEmEdicao input[type=text]{
+  width:100%;
+  border:0;
+  background-color:rgb(255,253,210);  
+}

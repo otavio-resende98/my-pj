@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+<nav class="navbar navbar-dark justify-content-between">
+    <a href="{% url 'member:home' %}" class="navbar-brand mb-0 h1"><img src="{% static 'images/ju_circle.png' %}" height='40px'/></a>
+    <span>
+    {% if user.is_authenticated %}
+        <a href="{% url 'account_email' %}" class="btn btn-raised btn-light text-dark">Alterar dados</a>
+        &nbsp;
+        <a href="{% url 'account_logout' %}" class="btn btn-raised btn-danger">Sair</a>
+    {% endif %}
+    </span>
+</nav>
+{% endblock navbar %}
